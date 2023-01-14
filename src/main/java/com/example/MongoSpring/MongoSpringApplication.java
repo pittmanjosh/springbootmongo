@@ -17,9 +17,12 @@ public class MongoSpringApplication {
 
 	@GetMapping("/api/person")
 	public String getPersonName(@RequestParam(value = "name") String name) {
+		System.out.println("Person request***");
 		System.out.println("Creating Person>>>");
+		System.out.println("");
 		Person createdPerson = new Person(name);
-		System.out.println("*Person Created*");
+		System.out.println("***Person Created");
+		System.out.println("");
 
 		return createdPerson.getName();
 	}
