@@ -16,8 +16,9 @@ public class MongoSpringApplication {
 	}
 
 	@GetMapping("/api/dadjokes")
-	public String dadJokes() {
-		return "Justice is a dish best served cold, if it were served warm it would be just water.";
+	public Person dadJokes() {
+		Person Bob = new Person();
+		return Bob;
 	}
 
 }

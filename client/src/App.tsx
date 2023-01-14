@@ -7,7 +7,8 @@ function App() {
     fetch("/api/dadjokes")
       .then((response) => response.text())
       .then((message) => {
-        setJoke(message);
+        console.log(message);
+        setJoke(JSON.stringify(message));
       });
   };
 
