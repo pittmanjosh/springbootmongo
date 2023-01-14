@@ -16,8 +16,10 @@ public class MongoSpringApplication {
 	}
 
 	@GetMapping("/api/person")
-	public Person getPerson(@RequestParam(value = "name") String name) {
-		return new Person(name);
+	public String getPersonName(@RequestParam(value = "name") String name) {
+		Person createdPerson = new Person(name);
+
+		return createdPerson.getName();
 	}
 
 }

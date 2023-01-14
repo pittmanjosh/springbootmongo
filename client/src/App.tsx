@@ -16,10 +16,10 @@ function App() {
 
   function fetchName() {
     fetch(`/api/person?name=${name}`)
-      .then((response) => response.json())
-      .then((person: Person) => setDisplay(person.name))
+      .then((response) => response.text())
+      .then((person) => setDisplay(person))
       .then(() => setName(""))
-      .catch(() => "error");
+      .catch(() => setDisplay("error"));
   }
 
   const updateDisplay = (e: FormEvent) => {
@@ -31,7 +31,9 @@ function App() {
     <div className="App">
       <div className="App-header container-fluid">
         <form className="container" onSubmit={updateDisplay}>
-          <h1>{display || "Please add and submit some text"}</h1>
+          <h1 style={{ overflowX: "scroll" }}>
+            {display || "Please add and submit some text"}
+          </h1>
           <input
             className="form-control"
             value={name}
