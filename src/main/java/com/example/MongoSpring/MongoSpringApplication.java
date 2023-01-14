@@ -15,10 +15,9 @@ public class MongoSpringApplication {
 		SpringApplication.run(MongoSpringApplication.class, args);
 	}
 
-	@GetMapping("/api/dadjokes")
-	public Person dadJokes() {
-		Person Bob = new Person();
-		return Bob;
+	@GetMapping("/api/person")
+	public Person getPerson(@RequestParam(value = "name") String name) {
+		return new Person(name);
 	}
 
 }
