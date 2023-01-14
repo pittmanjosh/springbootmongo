@@ -8,6 +8,7 @@ public class Person {
 	}
 
 	String getName() {
+		System.out.println(">>>Person Name Read");
 		return this.name;
 	}
 
