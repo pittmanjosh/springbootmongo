@@ -29,13 +29,19 @@ function App() {
 
   return (
     <div className="App">
-      <form onSubmit={updateDisplay}>
-        <input value={name} onChange={handleChange} />
-        <h1>{display}</h1>
-        <button type="submit" className="btn btn-primary">
-          UPDATE
-        </button>
-      </form>
+      <div className="App-header container-fluid">
+        <form className="container" onSubmit={updateDisplay}>
+          <h1>{display || "Please add and submit some text"}</h1>
+          <input
+            className="form-control"
+            value={name}
+            onChange={handleChange}
+          />
+          <button type="submit" className="btn btn-primary">
+            UPDATE
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
