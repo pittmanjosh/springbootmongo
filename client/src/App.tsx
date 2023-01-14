@@ -38,6 +38,7 @@ function App() {
             className="form-control"
             value={name}
             onChange={handleChange}
+            placeholder="Enter text here..."
           />
           <button type="submit" className="btn btn-primary">
             UPDATE
