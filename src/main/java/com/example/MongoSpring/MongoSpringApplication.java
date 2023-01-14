@@ -15,9 +15,9 @@ public class MongoSpringApplication {
 		SpringApplication.run(MongoSpringApplication.class, args);
 	}
 
-	@GetMapping("/")
-	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return String.format("Hello %s!", name);
+	@GetMapping("/api/dadjokes")
+	public String dadJokes() {
+		return "Justice is a dish best served cold, if it were served warm it would be just water.";
 	}
 
 }
